@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complaint Categorizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Complaint Categorization Portal</h2>
+    <form action="/" method="post">
+      <textarea name="complaint" placeholder="Enter your complaint here..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    {% if prediction %}
+      <div id="result">
+        Predicted Category: {{ prediction }}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
